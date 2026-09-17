@@ -17,7 +17,6 @@
 
   $wa = $this->getWebAssetManager();
   $wa->registerAndUseStyle('template-style', 'templates/' . $template . '/css/style.css');
-  $wa->registerAndUseScript('template-script', 'templates/' . $template . '/js/main.js');
 
   $doc->setTitle($title == "Home" ? $sitename : $sitename . " - " . $title);
   
@@ -53,7 +52,9 @@
       <div id="content">
         <div class="content-top">
           <div id="look">
-            <img id="irop-logo" src="templates/amswallow/images/irop-logo.png" alt="irop-logo.png" />
+            <div id="irop-logo-wrapper">
+              <img id="irop-logo" src="templates/amswallow/images/irop-logo.png" alt="irop-logo.png" />
+            </div>
             <h2><?php echo $lang->getTag() == "cs-CZ"? "Novinky": "Look"; ?></h2>
             <jdoc:include type="modules" name="novinky" />
           </div>
