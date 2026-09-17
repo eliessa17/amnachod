@@ -777,6 +777,14 @@ body {
 
 /* Search input */
 
+.search-controls {
+  display: flex;
+}
+
+#right-menu-toggle {
+  display: none;
+}
+
 #search label {
   display: none;
 }
@@ -1109,5 +1117,27 @@ body {
   #search input[type="text"] {
     margin-left: 0 !important;
     width: calc(100% - 14px) !important;
+  }
+
+  #search .search-controls > *:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  #right-menu-toggle {
+    align-items: center;
+    background-color: #0072bc;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 24px;
+    height: 36.8px;
+    justify-content: center;
+    line-height: 1;
+    margin: 20px 0 0 10px;
+    padding: 0;
+    width: 36.8px;
   }
 }

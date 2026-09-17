@@ -75,7 +75,12 @@
           <jdoc:include type="modules" name="prave-menu" />
         </div>
         <div id="search">
-          <jdoc:include type="modules" name="vyhledavani" />
+          <div class="search-controls">
+            <jdoc:include type="modules" name="vyhledavani" />
+            <button id="right-menu-toggle" type="button" aria-label="Otevřít menu" title="Otevřít menu">
+              &#9776;
+            </button>
+          </div>
         </div>
       </div>
     </div>
