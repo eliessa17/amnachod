@@ -25,91 +25,74 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <jdoc:include type="head" />
   </head>
   <body>
     <div id="header">
-      <table>
-        <tbody>
-          <tr>
-            <td id="logo">
-              <img src="templates/amswallow/images/logo.svg" alt="logo.svg" onclick="location='<?php echo $root; ?>'" />
-            </td>
-            <td id="link-menu">
-              <jdoc:include type="modules" name="odkazy" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>  
-    <div id="top">  
-      <table>
-        <tbody>
-          <tr>
-            <td id="top-menu">
-              <jdoc:include type="modules" name="obory" />
-            </td>
-            <td id="languages-menu">
-              <jdoc:include type="modules" name="jazyky" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="header-inner">
+        <div id="logo">
+          <img src="templates/amswallow/images/logo.svg" alt="logo.svg" onclick="location='<?php echo $root; ?>'" />
+        </div>
+        <div id="link-menu">
+          <jdoc:include type="modules" name="odkazy" />
+        </div>
+      </div>
     </div>
-    <table id="main">
-      <tbody>
-        <tr>
-          <td id="content">
-            <table>
-              <tr>
-                <td id="look">
-                  <img id="irop-logo" src="templates/amswallow/images/irop-logo.png" alt="irop-logo.png" />
-                  <h2><?php echo $lang->getTag() == "cs-CZ"? "Novinky": "Look"; ?></h2>
-                  <jdoc:include type="modules" name="novinky" />
-                </td>
-                <td id="slideshow">
-                  <jdoc:include type="modules" name="aktuality" />
-                </td>
-              </tr>
-            </table>
-            <div id="article">
-              <jdoc:include type="component" />
-            </div>
-          </td>
-          <td id="right">
-            <div id="news">
-              <h2><?php echo $lang->getTag() == "cs-CZ"? "Aktuality - úřední deska": "News"; ?></h2>
-              <jdoc:include type="modules" name="mini-aktuality" />
-            </div>
-            <div id="right-menu">
-              <jdoc:include type="modules" name="prave-menu" />
-            </div>
-            <div id="search">
-              <jdoc:include type="modules" name="vyhledavani" />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="top">
+      <div class="topbar-inner">
+        <div id="top-menu">
+          <jdoc:include type="modules" name="obory" />
+        </div>
+        <div id="languages-menu">
+          <jdoc:include type="modules" name="jazyky" />
+        </div>
+      </div>
+    </div>
+    <div id="main" class="main-layout">
+      <div id="content">
+        <div class="content-top">
+          <div id="look">
+            <img id="irop-logo" src="templates/amswallow/images/irop-logo.png" alt="irop-logo.png" />
+            <h2><?php echo $lang->getTag() == "cs-CZ"? "Novinky": "Look"; ?></h2>
+            <jdoc:include type="modules" name="novinky" />
+          </div>
+          <div id="slideshow">
+            <jdoc:include type="modules" name="aktuality" />
+          </div>
+        </div>
+        <div id="article">
+          <jdoc:include type="component" />
+        </div>
+      </div>
+      <div id="right">
+        <div id="news">
+          <h2><?php echo $lang->getTag() == "cs-CZ"? "Aktuality - úřední deska": "News"; ?></h2>
+          <jdoc:include type="modules" name="mini-aktuality" />
+        </div>
+        <div id="right-menu">
+          <jdoc:include type="modules" name="prave-menu" />
+        </div>
+        <div id="search">
+          <jdoc:include type="modules" name="vyhledavani" />
+        </div>
+      </div>
+    </div>
     <div id="footer">
-	  <img id="partners" src="templates/amswallow/images/partneri.png" alt="partneri.png" />
-      <table>
-        <tbody>
-          <tr>
-            <td id="icon">
-              <img src="templates/amswallow/images/logo.svg" alt="logo.svg">
-            </td>
-            <td id="info">
-              <jdoc:include type="modules" name="zapati" />
-            </td>
-            <td id="login">
-              <p>
-                <a href="administrator" target="_blank">LOGIN</a>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <img id="partners" src="templates/amswallow/images/partneri.png" alt="partneri.png" />
+      <div class="footer-inner">
+        <div id="icon">
+          <img src="templates/amswallow/images/logo.svg" alt="logo.svg">
+        </div>
+        <div id="info">
+          <jdoc:include type="modules" name="zapati" />
+        </div>
+        <div id="login">
+          <p>
+            <a href="administrator" target="_blank">LOGIN</a>
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

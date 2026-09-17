@@ -56,9 +56,17 @@ body {
   width: 100%;
 }
 
-#header table {
-  border-collapse: collapse;
-  margin: 0px auto 0px auto;
+.header-inner,
+.topbar-inner,
+.main-layout,
+.content-top,
+.footer-inner {
+  display: flex;
+}
+
+.header-inner,
+.topbar-inner {
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -80,6 +88,7 @@ body {
 /* Link Menu */
 
 #link-menu {
+  margin-left: auto;
   padding: 0px 50px 0px 0px;
   vertical-align: top;
   width: calc(100% - 500px);
@@ -124,10 +133,8 @@ body {
   width: 100%;
 }
 
-#top table {
-  border-collapse: collapse;
+.topbar-inner {
   margin: 0px auto 20px auto;
-  width: 100%;
 }
 
 /* Top Menu */
@@ -203,10 +210,9 @@ body {
 /* Main */
 
 #main {
-  border-collapse: collapse;
   margin: 0px auto 0px auto;   
   width: 100%;
-} 
+}
 
 /* Content */
 
@@ -216,8 +222,7 @@ body {
   width: calc(100% - 400px);
 }
 
-#content table {
-  border-collapse: collapse;
+.content-top {
   width: 100%;
 }
 
@@ -327,7 +332,17 @@ body {
 /* Single article */
 
 #article .item-page {
-  background-color: white; 
+  background-color: white;
+  margin: 0 0 30px 0;
+  padding: 30px 0 30px 0;
+}
+
+#article .item-page h1 {
+  font-family: GillSans, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px 30px 30px 30px;
 }
 
 #article .item-page h2 {
@@ -346,7 +361,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   margin: 0px;
-  padding: 30px 30px 00px 30px;
+  padding: 30px 30px 0px 30px;
   text-align: justify;
 }
 
@@ -391,6 +406,26 @@ body {
 
 /* Blog */
 
+#article .blog-item {
+  background-color: white;
+  margin: 0 0 30px 0;
+  padding: 30px 0 30px 0;
+}
+
+#article .article-info {
+  font-family: GillSans, sans-serif;
+  margin: 0;
+  padding: 0 30px 15px 30px;
+}
+
+#article .article-info .article-info-term {
+  display: none;
+}
+
+#article .article-info .create {
+  margin-left: 0;
+}
+
 #article .blog h2 {
   background-color: #0072bc;  
   color: white; 
@@ -403,7 +438,6 @@ body {
 }
 
 #article .blog p {
-  background-color: white;
   font-family: GillSans, sans-serif;
   font-size: 14px;
   margin: 0px;
@@ -412,7 +446,6 @@ body {
 }
 
 #article .blog > div h2 {
-  background-color: white;
   color: black;
   font-size: 14px;
   padding: 20px 30px 20px 30px;
@@ -443,34 +476,11 @@ body {
   text-align: center;
 }
 
-#article .blog .pagination ul {
-  background-color: #0072bc;
-  display: block;  
-  margin: 0px auto 20px auto;
-  padding: 12px 30px 12px 30px;
-  text-align: center;
-}
-
-#article .blog .pagination li {
-  color: white;  
-  display: inline;
-  font-family: GillSans, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-#article .blog .pagination a,
-#article .blog .pagination span {
-  color: inherit; 
-  margin: 0px 5px 0px 5px;
-}
-
-#article .blog .pagination li:not(:first-of-type)::before {
-  content: "\2022";
-}
-
 /* Search */
+
+#article .finder #search-form .visually-hidden {
+  display: none;
+}
 
 #article .finder #search-form .word {
   border: 0px;
@@ -496,11 +506,6 @@ body {
 
 #article .finder #search-form button {
   display: none;
-}
-
-#article .finder #search-results ul {
-  margin: 0px;
-  padding: 0px;
 }
 
 #article .finder #search-results li {
@@ -576,9 +581,27 @@ body {
   font-family: GillSans, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  margin: 0px auto 20px auto;
+  margin: 20px auto 0px auto;
   padding: 12px 30px 12px 30px;
   text-align: center;
+}
+
+#article .finder #search-results .result__item {
+  border: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#article .finder #search-results .result__title {
+  padding-top: 30px;
+}
+
+#article .finder #search-results .result__description {
+  padding-bottom: 30px;
+}
+
+#article .finder #search-results .result__taxonomy {
+  display: none;
 }
 
 /* Gallery */
@@ -761,11 +784,11 @@ body {
   width: 100%;
 }
 
-#footer table {
-  border-collapse: collapse;  
-  margin: 0px auto 0px auto; 
+.footer-inner {
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto 0px auto;
 }
-
 
 /* Partners */
 
@@ -883,4 +906,77 @@ body {
   background-color: transparent;
   border: 2px solid #ffffff;
 }
-			
+
+/* Pagination */
+
+#article .pagination {
+  background-color: #0072bc;
+  display: block;  
+  margin: 0px auto 20px auto;
+  padding: 12px 30px 12px 30px;
+  text-align: center;
+}
+
+#article .pagination li {
+  color: white;  
+  display: inline;
+  font-family: GillSans, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#article .pagination a {
+  color: inherit; 
+  margin: 0px 5px 0px 5px;
+  text-decoration: none;
+}
+
+#article .pagination span {
+  color: inherit; 
+  margin: 0px 5px 0px 5px;
+}
+
+#article .pagination li:not(:first-of-type)::before {
+  content: "\2022";
+}
+
+#article .pagination .page-link:has(.icon-angle-double-left)::after {
+  content: "<<";
+}
+
+#article .pagination .page-link .icon-angle-double-left {
+  display: none;
+}
+
+#article .pagination .page-link:has(.icon-angle-left)::after {
+  content: "<";
+}
+
+#article .pagination .page-link .icon-angle-left {
+  display: none;
+}
+
+#article .pagination .page-link:has(.icon-angle-right)::after {
+  content: ">";
+}
+
+#article .pagination .page-link .icon-angle-right {
+  display: none;
+}
+
+#article .pagination .page-link:has(.icon-angle-double-right)::after {
+  content: ">>";
+}
+
+#article .pagination .page-link .icon-angle-double-right {
+  display: none;
+}
+
+#article .pagination .disabled .page-link {
+  opacity: 0.5;
+}
+
+#article .pagination .active .page-link {
+  opacity: 0.5;
+}
