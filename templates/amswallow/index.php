@@ -17,6 +17,7 @@
 
   $wa = $this->getWebAssetManager();
   $wa->registerAndUseStyle('template-style', 'templates/' . $template . '/css/style.css');
+  $wa->registerAndUseScript('template-menu', 'templates/' . $template . '/js/menu.js');
 
   $doc->setTitle($title == "Home" ? $sitename : $sitename . " - " . $title);
   
@@ -72,18 +73,20 @@
           <jdoc:include type="modules" name="mini-aktuality" />
         </div>
         <div id="right-menu">
+          <button id="right-menu-close" type="button" aria-label="<?php echo $lang->getTag() == "cs-CZ" ? "Zavřít menu" : "Close menu"; ?>" title="<?php echo $lang->getTag() == "cs-CZ" ? "Zavřít menu" : "Close menu"; ?>">&times;</button>
           <jdoc:include type="modules" name="prave-menu" />
         </div>
         <div id="search">
           <div class="search-controls">
             <jdoc:include type="modules" name="vyhledavani" />
-            <button id="right-menu-toggle" type="button" aria-label="Otevřít menu" title="Otevřít menu">
+            <button id="right-menu-open" type="button" aria-expanded="false" aria-label="<?php echo $lang->getTag() == "cs-CZ" ? "Otevřít menu" : "Open menu"; ?>" title="<?php echo $lang->getTag() == "cs-CZ" ? "Otevřít menu" : "Open menu"; ?>">
               &#9776;
             </button>
           </div>
         </div>
       </div>
     </div>
+    <div id="right-menu-backdrop"></div>
     <div id="footer">
       <img id="partners" src="templates/amswallow/images/partneri.png" alt="partneri.png" />
       <div class="footer-inner">

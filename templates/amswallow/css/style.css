@@ -408,10 +408,6 @@ body {
   padding: 30px 0 30px 0;
 }
 
-#article .blog-item img {
-  width: 100%;
-}
-
 #article .article-info {
   font-family: GillSans, sans-serif;
   margin: 0;
@@ -474,6 +470,10 @@ body {
   margin: 0px auto 20px auto;
   padding: 12px 30px 12px 30px;
   text-align: center;
+}
+
+#article img {
+  max-width: 100%;
 }
 
 /* Search */
@@ -781,8 +781,16 @@ body {
   display: flex;
 }
 
-#right-menu-toggle {
+#right-menu-backdrop {
   display: none;
+}
+
+#right-menu-open {
+  display: none;
+}
+
+#right-menu-close {
+  display: none !important;
 }
 
 #search label {
@@ -1036,6 +1044,11 @@ body {
 }
 
 @media (max-width: 1000px) {
+  html.right-menu-open,
+  body.right-menu-open {
+    overflow: hidden;
+  }
+
   #logo,
   #logo img {
     width: calc(50vw - 100px);
@@ -1111,7 +1124,78 @@ body {
   }
 
   #right-menu {
-    display: none;
+    background-color: white;
+    bottom: 0;
+    box-sizing: border-box;
+    display: block;
+    max-width: 85vw;
+    overflow-y: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    width: 320px;
+    z-index: 1001;
+  }
+
+  body.right-menu-open #right-menu {
+    transform: translateX(0);
+  }
+
+  #right-menu-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    display: block;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+  }
+
+  body.right-menu-open #right-menu-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #right-menu-close {
+    background: transparent;
+    border: 0;
+    color: #0072bc;
+    cursor: pointer;
+    display: block !important;
+    font-size: 32px;
+    height: 36.8px;
+    line-height: 1;
+    margin: 0 0 10px auto;
+    padding: 0;
+    width: 36.8px !important;
+  }
+
+  #right-menu ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  #right-menu li {
+    padding: 0;
+    width: 100%;
+  }
+
+  #right-menu li > ul {
+    display: block;
+    left: auto;
+    position: static;
+  }
+
+  #right-menu a,
+  #right-menu span {
+    text-align: left;
   }
 
   #search input[type="text"] {
@@ -1124,7 +1208,7 @@ body {
     min-width: 0;
   }
 
-  #right-menu-toggle {
+  #right-menu-open {
     align-items: center;
     background-color: #0072bc;
     border: 0;
